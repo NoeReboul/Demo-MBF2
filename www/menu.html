@@ -1,0 +1,39 @@
+<!--
+* Copyright 2015 PSA Peugeot Citroen 
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+* 
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+* @author Noé Reboul <noe.reboul@mpsa.com>
+-->
+
+<ons-page>
+    <ons-page modifier="menu-page">
+        <ons-toolbar modifier="transparent">
+            <div class="right">
+                <ons-toolbar-button class="menu-close" ng-click="menu.close()">
+                </ons-icon>Close
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-list class="menu-list">
+        <ons-list-item class="menu-item" ng-click="menu.setMainPage('main.html', {closeMenu: true})">
+            <ons-icon icon="ion-android-car"></ons-icon>
+            Où est ma voiture ?
+        </ons-list-item>
+        <ons-list-item class="menu-item" ng-click="menu.setMainPage('pref.html', {closeMenu: true})">
+            <ons-icon icon="ion-settings"></ons-icon>
+            Préférences
+        </ons-list-item>
+    </ons-list>
+</ons-page>

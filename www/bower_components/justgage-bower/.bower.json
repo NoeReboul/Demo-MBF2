@@ -1,0 +1,22 @@
+{
+  "name": "justgage-bower",
+  "main": "justgage.js",
+  "ignore": [
+    "R&D",
+    "README.md"
+  ],
+  "dependencies": {
+    "raphael": "~2.1.2"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/toorshia/justgage",
+  "_release": "27cf990183",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "27cf990183c47ba0794e4c180236a7d0af244540"
+  },
+  "_source": "git://github.com/toorshia/justgage.git",
+  "_target": "*",
+  "_originalSource": "toorshia/justgage"
+}

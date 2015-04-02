@@ -1,0 +1,27 @@
+{
+  "name": "raphael",
+  "main": "raphael.js",
+  "ignore": [
+    "eve",
+    "**/.*",
+    "*.html",
+    "*.json",
+    "*.markdown",
+    "*.md",
+    "copy.js",
+    "Gruntfile.js",
+    "raphael.core.js",
+    "raphael.svg.js",
+    "raphael.vml.js",
+    "reference.js"
+  ],
+  "homepage": "https://github.com/DmitryBaranovskiy/raphael",
+  "_release": "5f08cf50e5",
+  "_resolution": {
+    "type": "commit",
+    "commit": "5f08cf50e5d6a852f8bc40310b2cdc85bafd5b87"
+  },
+  "_source": "git://github.com/DmitryBaranovskiy/raphael.git",
+  "_target": "5f08cf50e5d6a852f8bc40310b2cdc85bafd5b87",
+  "_originalSource": "raphael"
+}
