@@ -201,7 +201,6 @@ a.controller('mainController', function($scope,Car){
 			c.get_location().then(function() {
 				loc = c.position;
 
-					console.log(JSON.stringify(c));
 				// appel de la carte Google
 				$scope.map = { center: { latitude: loc.latitude , longitude: loc.longitude }, zoom: 14 };
 
