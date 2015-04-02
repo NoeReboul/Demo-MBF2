@@ -23,7 +23,7 @@ var API_URL = 'https://api.mpsa.com/bgd/connectedcar';
 
 // La clé API que vous trouverez dans http://apimanagement.mpsa.com/bgd/connectedcar sous
 // sous l'onglet "Applications" 
-var API_KEY = 'f1bdc79c-bf2b-4534-beaf-7f4ef34175ce';
+var API_KEY = '14d71583-0747-4ba2-ad80-38250432c784';
 
 // Le module principal de notre application
 // on importe plusieur librairies : 
@@ -70,7 +70,7 @@ a.factory('Car', function($resource){
 	};
 
 	// Récupération de la position du véhicule
-	Car.prototype.get_location = function(callback_error){
+	Car.prototype.get_location = function(){
 
 		// En général, les callbacks javascript , comme par exemple le 
 		// callback $ressource.get, modifie la valeur de la variable "this" 
@@ -113,7 +113,15 @@ a.factory('Car', function($resource){
             return response;
 		}, function(error) {
 			// une gestion simpliste des erreurs :)
-			callback_error(error);
+			ons.notification.alert({
+				message: "Une erreur s'est produite. Merci de réessayer plus tard.",
+				title: 'Erreur',
+				buttonLabel: 'OK',
+				animation: 'default', // or 'none'
+				callback: function() {
+					// Alert button is closed!
+				}
+			});
 		});
 	};
 	
@@ -184,25 +192,39 @@ a.controller('mainController', function($scope,Car){
 	
 	// fonction appelée lorsque l'utilisateur appuie sur le bouton
     $scope.findMyCar = function(){
-		var c = new Car($scope.pref.vin,$scope.pref.contrat);
-		var loc = {};
-		
-        c.get_location().then(function() {
-			loc = c.position;
+		if ($scope.pref.vin != "" && $scope.pref.contrat != "") {
+			$scope.error = "";
 
-				console.log(JSON.stringify(c));
-			// appel de la carte Google
-			$scope.map = { center: { latitude: loc.latitude , longitude: loc.longitude }, zoom: 14 };
+			var c = new Car($scope.pref.vin,$scope.pref.contrat);
+			var loc = {};
+			
+			c.get_location().then(function() {
+				loc = c.position;
 
-			// création d'un marqueur.
-			$scope.marker = {
-				id: 0,
-				coords: {
-					latitude: loc.latitude,
-					longitude: loc.longitude
-				},
-				options: { draggable: false }
-			};
-		});
+					console.log(JSON.stringify(c));
+				// appel de la carte Google
+				$scope.map = { center: { latitude: loc.latitude , longitude: loc.longitude }, zoom: 14 };
+
+				// création d'un marqueur.
+				$scope.marker = {
+					id: 0,
+					coords: {
+						latitude: loc.latitude,
+						longitude: loc.longitude
+					},
+					options: { draggable: false }
+				};
+			});
+		} else {
+			ons.notification.alert({
+				message: "Merci de renseigner le VIN et votre N° de contrat.",
+				title: 'Attention',
+				buttonLabel: 'OK',
+				animation: 'default', // or 'none'
+				callback: function() {
+					// Alert button is closed!
+				}
+			});
+		};
     };
 });

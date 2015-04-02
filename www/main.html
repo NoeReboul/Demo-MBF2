@@ -35,8 +35,12 @@
                     <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
                     </ui-gmap-marker>
                 </ui-gmap-google-map>
-				<red>{{ error }}</red>
             </ons-col>
         </ons-row>
+		<ons-modal ng-click="modal.hide()" var="modal">
+			<br>
+			<br> {{ error }}
+			<br>
+		</ons-modal> 
     </div>
 </ons-page>
