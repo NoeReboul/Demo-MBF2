@@ -11,4 +11,4 @@ Bon code et bon Hackathon !
 
  * [Cordova](https://cordova.apache.org/) pour la plateforme de dev mobile
  * [Onsen.io](http://onsen.io/) pour le framework graphique (basé sur [Angular](https://angularjs.org/))
- * [Angular Google MAps](http://angular-ui.github.io/angular-google-maps/#!/) pour l'utilisation de l'API Google Maps.
+ * [Angular Google Maps](http://angular-ui.github.io/angular-google-maps/#!/) pour l'utilisation de l'API Google Maps.
